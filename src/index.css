@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 0 84% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 84% 50%;
+
+    --radius: 0.75rem;
+
+    --youtube-red: 0 84% 50%;
+    --youtube-red-hover: 0 84% 45%;
+    --surface-elevated: 0 0% 99%;
+    --surface-overlay: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 84% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 84% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-youtube {
+    background: linear-gradient(135deg, hsl(0 84% 50%) 0%, hsl(340 84% 50%) 100%);
+  }
+
+  .gradient-card {
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+  }
+
+  .glow-red {
+    box-shadow: 0 4px 20px hsl(0 84% 50% / 0.25);
+  }
+
+  .glow-red-subtle {
+    box-shadow: 0 2px 12px hsl(0 84% 50% / 0.15);
+  }
+
+  .thumbnail-aspect {
+    aspect-ratio: 16 / 9;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 4px 20px hsl(0 84% 50% / 0.2);
+    }
+    50% {
+      box-shadow: 0 4px 30px hsl(0 84% 50% / 0.35);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+      90deg,
+      hsl(0 0% 94%) 0%,
+      hsl(0 0% 98%) 50%,
+      hsl(0 0% 94%) 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .text-gradient-red {
+    background: linear-gradient(135deg, hsl(0 84% 50%) 0%, hsl(350 84% 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .soft-shadow {
+    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.06);
+  }
+
+  .soft-shadow-lg {
+    box-shadow: 0 8px 40px hsl(0 0% 0% / 0.08);
+  }
+}
